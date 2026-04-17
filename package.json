@@ -1,0 +1,55 @@
+{
+  "name": "@gnostra-ai/ventrata-mcp",
+  "version": "1.0.2",
+  "description": "Read-only MCP server for Ventrata OCTO API",
+  "license": "MIT",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": {
+    "ventrata-mcp": "build/index.js"
+  },
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "modelcontextprotocol",
+    "claude",
+    "anthropic",
+    "ventrata",
+    "octo",
+    "octo-api",
+    "tourism",
+    "tour-operator",
+    "booking",
+    "availability",
+    "read-only"
+  ],
+  "homepage": "https://github.com/gnostra-ai/ventrata-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnostra-ai/ventrata-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gnostra-ai/ventrata-mcp/issues"
+  },
+  "scripts": {
+    "build": "rm -rf build && tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "rm -rf build && npm run build",
+    "start": "node build/index.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.24.3",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.2",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.1"
+  }
+}
