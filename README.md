@@ -1,5 +1,37 @@
 # Ventrata MCP Server
 
+> # 🚨 This package has moved. Please switch as soon as possible.
+>
+> ### ➡️ New package: [`@gnostra-ai/ventrata-mcp`](https://www.npmjs.com/package/@gnostra-ai/ventrata-mcp) on npm
+> ### ➡️ New repository: [github.com/gnostra-ai/ventrata-mcp](https://github.com/gnostra-ai/ventrata-mcp)
+>
+> ⚠️ `@team247/ventrata-mcp` is **deprecated** and will not receive further updates. Existing installs keep working but print a deprecation warning. **Migrate now** to continue getting fixes and new features.
+>
+> **Migration (replace the install in your MCP config):**
+>
+> ```json
+> {
+>   "mcpServers": {
+>     "ventrata": {
+>       "command": "npx",
+>       "args": ["-y", "@gnostra-ai/ventrata-mcp"],
+>       "env": { "VENTRATA_API_KEY": "your-api-key" }
+>     }
+>   }
+> }
+> ```
+>
+> Or, for a Claude Code one-liner:
+>
+> ```bash
+> claude mcp remove ventrata
+> claude mcp add --scope user ventrata npx -y @gnostra-ai/ventrata-mcp -e VENTRATA_API_KEY=your-key
+> ```
+>
+> The rest of this README is the full docs for the same server — now published under the new scope. All tools, configuration, and behavior are identical.
+
+---
+
 Use Claude (or any MCP-compatible AI assistant) to query tour products, check availability, and look up bookings and orders in [Ventrata](https://www.ventrata.com/) — the booking platform used by tour operators.
 
 > **Read-only.** This server can never create, modify, confirm, cancel, or refund anything in Ventrata. All calls are lookup-only — the server never sends write operations.
